@@ -1,0 +1,27 @@
+.task {
+  padding: 0.5em;
+  background: white;
+  margin-bottom: 0.5em;
+}
+.task__name {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  margin-bottom: 0em;
+}
+.task__description {
+  margin-bottom: 0em;
+}
+.task__icons{
+  width: 2em;
+  border-radius: 1em;
+}
+.task__story-points {
+  display: block;
+  text-align: center;
+}
+.icon{
+  width:2em;
+}
+.icon:hover{
+  cursor: pointer;
+}

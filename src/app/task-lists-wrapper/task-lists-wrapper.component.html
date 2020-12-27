@@ -1,0 +1,11 @@
+<div *ngIf="!loading; else loadingBlock">
+  <div class="task-lists-wrapper">
+    <app-task-list listName="To do " [tasks]="toDoTasks"></app-task-list>
+    <app-task-list listName="In Progress " [tasks]="inProgressTasks"></app-task-list>
+    <app-task-list listName="Code Review " [tasks]="codeReviewTasks"></app-task-list>
+    <app-task-list listName="Done " [tasks]="doneTasks"></app-task-list>
+  </div>
+</div>
+<ng-template #loadingBlock>
+  <p class="info-text">Loading...</p>
+</ng-template>

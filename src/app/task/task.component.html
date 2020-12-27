@@ -1,0 +1,16 @@
+<div class="task">
+  <p class="task__name text-secondary">{{ task.name }}</p>
+  <p class="task__description">
+    {{ task.description }}
+  </p>
+  <p class="task__icons bg-secondary">
+    <span class="task__story-points">{{ task.storyPoints }}</span>
+  </p>
+  <p>
+    Assigned to: <span class="text-secondary">{{ task.assignedTo }}</span>
+  </p>
+  <div class="task__controls">
+    <img (click)='remove(task.id)' class="icon" src="../../assets/img/delete-black-18dp.svg" />
+    <img class="icon" src="../../assets/img/build-24px.svg" />
+  </div>
+</div>

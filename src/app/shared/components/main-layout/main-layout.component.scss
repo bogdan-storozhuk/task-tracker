@@ -1,0 +1,12 @@
+.navbar-nav{
+  display: inline-grid;
+  width: 100%;
+  grid-template-columns: 75% 15% 10%;
+  align-items: center;
+}
+.header-message{
+  grid-column: 2;
+}
+.button-container{
+  grid-column: 3;
+}

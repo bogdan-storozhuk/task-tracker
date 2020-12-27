@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="navbar-nav">
+    <span class="header-message" *ngIf="auth.isAuthenticated()"> Welcome, User </span>
+    <div class="button-container">
+      <button
+        class="btn btn-secondary nav-item"
+        nav-item
+        *ngIf="auth.isAuthenticated(); else elseBlock"
+        (click)="logout()"
+      >
+        Logout
+      </button>
+      <ng-template #elseBlock>
+        <button routerLink="/signup" class="btn btn-primary nav-item">
+          Login
+        </button></ng-template
+      >
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

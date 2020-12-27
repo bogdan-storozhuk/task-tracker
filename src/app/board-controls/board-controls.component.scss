@@ -1,0 +1,9 @@
+.navbar-nav{
+  display: inline-grid;
+  width: 100%;
+  grid-template-columns: 75% 15% 10%;
+  align-items: center;
+}
+.button-container{
+  grid-column: 3;
+}
