@@ -20,6 +20,31 @@ export class TaskService {
       }))
     );
   }
+
+  update(task: Task): Observable<Task> {
+    return this.http.put<Task>(
+      `${environment.fbDbUrl}/tasks/${task.id}.json`,
+      task
+    );
+  }
+
+  changeStatus(task: Task): Observable<Task> {
+    return this.http.patch<Task>(
+      `${environment.fbDbUrl}/tasks/${task.id}.json`,
+      task
+    );
+  }
+
+  getById(id: string): Observable<Task> {
+    return this.http.get<Task>(`${environment.fbDbUrl}/tasks/${id}.json`).pipe(
+      map((task: Task) => ({
+        ...task,
+        id,
+        date: new Date(task.date),
+      }))
+    );
+  }
+
   getAll(): Observable<Task[]> {
     return this.http.get(`${environment.fbDbUrl}/tasks.json`).pipe(
       map((response: { [key: string]: any }) => {

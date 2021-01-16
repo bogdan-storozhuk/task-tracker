@@ -1,0 +1,92 @@
+<form
+  *ngIf="form; else loading"
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+  class="form"
+>
+  <h2 class="form-header">{{ formName }}</h2>
+  <div
+    class="form-group"
+    [ngClass]="{
+      invalid: form.get('name').touched && form.get('name').invalid
+    }"
+  >
+    <label for="name">Name:</label>
+    <input class="form-control" id="name" type="text" formControlName="name" />
+    <div
+      class="validation"
+      *ngIf="form.get('name').touched && form.get('name').invalid"
+    >
+      <small *ngIf="form.get('name').errors.required">Enter name</small>
+    </div>
+  </div>
+
+  <div
+    class="form-group"
+    [ngClass]="{
+      invalid:
+        form.get('description').touched && form.get('description').invalid
+    }"
+  >
+    <label for="description">Description:</label>
+    <input
+      class="form-control"
+      id="description"
+      type="text"
+      formControlName="description"
+    />
+    <div
+      class="validation"
+      *ngIf="form.get('description').touched && form.get('description').invalid"
+    >
+      <small *ngIf="form.get('description').errors.required"
+        >Enter description</small
+      >
+    </div>
+  </div>
+
+  <div
+    class="form-group"
+    [ngClass]="{
+      invalid:
+        form.get('storyPoints').touched && form.get('storyPoints').invalid
+    }"
+  >
+    <label for="storyPoints">Story points:</label>
+    <input
+      class="form-control"
+      id="storyPoints"
+      type="text"
+      formControlName="storyPoints"
+    />
+    <div
+      class="validation"
+      *ngIf="form.get('storyPoints').touched && form.get('storyPoints').invalid"
+    >
+      <small *ngIf="form.get('storyPoints').errors.required"
+        >Enter Story Points</small
+      >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="assignedTo">Assigned to:</label>
+    <select class="form-control" id="assignedTo" formControlName="assignedTo">
+      <option [ngValue]="user.email" *ngFor="let user of usersData">
+        {{ user.email }}
+      </option>
+    </select>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="form.invalid || submitted"
+  >
+    {{ buttonText }}
+  </button>
+</form>
+
+<ng-template #loading>
+  <p class="text-center">Loading...</p>
+</ng-template>

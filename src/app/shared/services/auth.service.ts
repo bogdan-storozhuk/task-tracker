@@ -21,6 +21,18 @@ export class AuthService {
     return localStorage.getItem('fb-token');
   }
 
+
+  getUser(): Observable<any> {
+    return this.http.post<any>(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=${environment.apiKey}`,{idToken:this.token});
+  }
+
+  register(user: User): Observable<User> {
+    return this.http.post<User>(
+      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.apiKey}`,
+      user
+    );
+  }
+
   login(user: User): Observable<any> {
     user.returnSecureToken = true;
     return this.http

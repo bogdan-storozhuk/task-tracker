@@ -1,6 +1,6 @@
 <div class="task-list">
   <p class="task-list__name">{{ listName + tasks.length }}</p>
   <div *ngIf="tasks.length!==0" class="tasks-wrapper">
-    <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+    <app-task (onChangeStatus)="changeStatus($event)" (onRemove)="remove($event)" *ngFor="let task of tasks" [task]="task"></app-task>
   </div>
 </div>

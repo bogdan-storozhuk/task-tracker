@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
   <div class="navbar-nav">
-    <span class="header-message" *ngIf="auth.isAuthenticated()"> Welcome, User </span>
+    <span class="header-message" *ngIf="auth.isAuthenticated()"> Welcome, {{email}} </span>
     <div class="button-container">
       <button
         class="btn btn-secondary nav-item"
@@ -11,6 +11,9 @@
         Logout
       </button>
       <ng-template #elseBlock>
+        <button routerLink="/register" class="btn btn-primary nav-item mr-2">
+          Register
+        </button>
         <button routerLink="/signup" class="btn btn-primary nav-item">
           Login
         </button></ng-template

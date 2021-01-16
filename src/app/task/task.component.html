@@ -10,7 +10,13 @@
     Assigned to: <span class="text-secondary">{{ task.assignedTo }}</span>
   </p>
   <div class="task__controls">
-    <img (click)='remove(task.id)' class="icon" src="../../assets/img/delete-black-18dp.svg" />
-    <img class="icon" src="../../assets/img/build-24px.svg" />
+    <img
+      (click)="remove({ id: task.id, status: task.status })"
+      class="icon"
+      src="../../assets/img/delete-black-18dp.svg"
+    />
+    <img (click)="openEdit()" class="icon" src="../../assets/img/build-24px.svg" />
+    <img (click)="changeStatusPrev(task)" class="icon" src="../../assets/img/arrow_back-24px.svg" />
+    <img (click)="changeStatusNext(task)" class="icon" src="../../assets/img/arrow_forward-24px.svg" />
   </div>
 </div>

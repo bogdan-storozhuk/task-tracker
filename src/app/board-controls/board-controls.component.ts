@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { CreateTaskModalComponent } from '../create-task-modal/create-task-modal.component';
 
 @Component({
   selector: 'app-board-controls',
@@ -8,11 +8,11 @@ import { CreateTaskModalComponent } from '../create-task-modal/create-task-modal
   styleUrls: ['./board-controls.component.scss'],
 })
 export class BoardControlsComponent implements OnInit {
-  constructor(private modalService: NgbModal) {}
+  constructor( private router: Router) {}
 
   ngOnInit(): void {}
 
   createTask() {
-    const modalRef = this.modalService.open(CreateTaskModalComponent);
+    this.router.navigate(['/tasks/new']);
   }
 }

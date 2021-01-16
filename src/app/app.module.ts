@@ -13,9 +13,9 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { TaskComponent } from './task/task.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { CreateTaskModalComponent } from './create-task-modal/create-task-modal.component';
 import { BoardControlsComponent } from './board-controls/board-controls.component';
 import { AuthInterceptor } from './shared/auth.interceptor';
+import { CreateTaskPageComponent } from './create-task-page/create-task-page.component';
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -33,8 +33,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
     SignupPageComponent,
     TaskListComponent,
     TaskComponent,
-    CreateTaskModalComponent,
     BoardControlsComponent,
+    CreateTaskPageComponent,
   ],
   imports: [
     BrowserModule,
