@@ -8,7 +8,7 @@ deploy:
   provider: heroku
   api_key:
     secure: pSebJzl6+m5hcPlqdQ8m8ZQ45ZXS0zVOrxEQATdqI9ipOek2fxBgnBPRJrCXR7pcrRchG8Q8pIdegfGa2liLKRRShURaPQNzr8XQhc5g4CBqd4I0cQua4aheXG8U31CZ5N8X4H/7s+6ICOXyxuZG0Jizg2owI1CKxR4S+q0v+4O42DqqAWR2EzsDp5Q64WcFNKsYQpc62idaO2wiu/Y8nDi07K/36ZWfdczc3qb46Tbg1FlzaTqThKSGhOY/3T9qIIRrtchsmQ3N+Qhypkd867Az3fq4Yid6hqghTy3a74qi9FovSReL7Vhgx4GDfFymDC27SB3D3xChgAXy5Yf64ZKnJKGZJhBlpH0UIgaSPlznA3oCtX9jXvZbjp5i2hfiy4YDtbI40TCivFvNbT7sIrFmcpzhToM3cY332hWUewTnGHOQAew+IeuT/tuXGjSwd4zcY3+EeyVPEt77+mznVoNZZp6SnDEkSFL9siZh4Bcvsw16xjTv3oPqHUi0j2y1bi9ZB8E6WMOtVVhJedg9kNZxZmMnQHYF243Q/wwVkbOXHnl/hlDnYSUiSdHZZ49lpITm5z2kJHD4OPb8lhnl46zyjbAAB2lgQZlR3KJOVh12OZnWTEyqwEvMctKlyODzJ0nHCMau0uR5jxuiF+3xAsWdkPZqkIJu7cd6X8vKz0w=
-  app: task-tracker
+  app: task-trackersen
   on:
     repo: bogdan-storozhuk/task-tracker
     branch: main
